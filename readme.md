@@ -10,7 +10,7 @@ Periodically queries the IBM Classic event_log API for recent events.   Virtual 
 **Usage**
 
 
-`python eventLog.pu
+````python eventLog.py
 
 In main program call
         main = event_logs() to intialize
@@ -20,7 +20,9 @@ These modules will filter differently
     bmLogs() - All BareMetal and Server Logs
     cciLogs() - All Cloud Compute Instance (Virtual Server) Logs)
     systemLogs() -  All System Logs
-    loginLogs() - All Login Events`
+    loginLogs() - All Login Events
+````
+
 
 **Links**
 Similiar Pyhon Event Log example
