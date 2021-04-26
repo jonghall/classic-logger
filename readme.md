@@ -5,7 +5,7 @@ Periodically queries the IBM Classic event_log API for recent events.   Virtual 
 **Assumptions**
 * Softlayer SDK (slcli setup) is configured with username and apikey with access to classic event log and billing data.
 * logging.json configured with appropriate log handlers
-* If using logdna set environment variable (logdna-ingest_key) is LogDna api key
+* If using logdna set environment variable (_logdna_ingest_key_) is LogDna api key
 
 **Usage**
 
@@ -78,6 +78,9 @@ Meta Data Logged with output.  (Power On virtualServer01.Jonathan-Hall-s-Account
 ````
 
 **Links**
+SoftLayer Python SDK documentation
+https://softlayer-api-python-client.readthedocs.io/en/latest/
+
 Similiar Pyhon Event Log example
 * https://sldn.softlayer.com/python/event_log/
 
