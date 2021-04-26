@@ -79,7 +79,7 @@ Meta Data Logged with output.  (Power On virtualServer01.Jonathan-Hall-s-Account
 
 **Links**
 SoftLayer Python SDK documentation
-https://softlayer-api-python-client.readthedocs.io/en/latest/
+* https://softlayer-api-python-client.readthedocs.io/en/latest/
 
 Similiar Pyhon Event Log example
 * https://sldn.softlayer.com/python/event_log/
