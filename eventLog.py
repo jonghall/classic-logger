@@ -155,11 +155,13 @@ class event_logs():
         else:
             backendRouter = ""
 
-        if "frontendRouters" in hardwareServer:
+        if "frontendRouters" in hardwareServer and  publicVlan != "":
             if len(hardwareServer['frontendRouters']) > 1:
                 frontendRouter = hardwareServer['frontendRouters'][0]['hostname']
             else:
                 frontendRouter = hardwareServer['frontendRouters']['hostname']
+        else:
+            frontendRouter = ""
 
         if "datacenter" in hardwareServer:
             datacenter = hardwareServer['datacenter']['name']
@@ -182,8 +184,8 @@ class event_logs():
                 "memory": memory,
                 "privateVlan": privateVlan,
                 "publicVlan": publicVlan,
-                "primaryBackendIpAddress": primaryBackendIpAddress,
-                "primaryIpAddress": primaryIpAddress,
+                "privateIpAddress": primaryBackendIpAddress,
+                "publicIpAddress": primaryIpAddress,
                 "frontendRouter": frontendRouter,
                 "backendRouter": backendRouter,
                 "datacenter": datacenter
@@ -226,7 +228,7 @@ class event_logs():
         else:
             backendRouter = ""
 
-        if "frontendRouters" in virtualGuest:
+        if "frontendRouters" in virtualGuest and publicVlan != "":
             frontendRouter = virtualGuest['frontendRouters']['hostname']
         else:
             frontendRouter = ""
@@ -253,8 +255,8 @@ class event_logs():
                 "image": templateImage,
                 "privateVlan": privateVlan,
                 "publicVlan": publicVlan,
-                "primaryBackendIpAddress": primaryBackendIpAddress,
-                "primaryIpAddress": primaryIpAddress,
+                "privateIpAddress": primaryBackendIpAddress,
+                "publicIpAddress": primaryIpAddress,
                 "frontendRouter": frontendRouter,
                 "backendRouter": backendRouter,
                 "datacenter": datacenter
