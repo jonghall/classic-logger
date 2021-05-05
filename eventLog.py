@@ -186,8 +186,8 @@ class event_logs():
                 "publicVlan": publicVlan,
                 "privateIpAddress": primaryBackendIpAddress,
                 "publicIpAddress": primaryIpAddress,
-                "frontendRouter": frontendRouter,
                 "backendRouter": backendRouter,
+                "frontendRouter": frontendRouter,
                 "datacenter": datacenter
                 }
 
