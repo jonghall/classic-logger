@@ -136,12 +136,13 @@ class event_logs():
         processorCoreAmount = hardwareServer['processorCoreAmount']
         memory = hardwareServer['memoryCapacity']
 
-        if "networkVlans" in hardwareServer:
-            publicVlan = hardwareServer['networkVlans'][0]['vlanNumber']
-            if len(hardwareServer['networkVlans']) > 1:
-                privateVlan = hardwareServer['networkVlans'][1]['vlanNumber']
+        if "networkVlans" in virtualGuest:
+            if len(virtualGuest['networkVlans']) > 1:
+                publicVlan = virtualGuest['networkVlans'][0]['vlanNumber']
+                privateVlan = virtualGuest['networkVlans'][1]['vlanNumber']
             else:
-                privateVlan = ""
+                publicVlan = ""
+                privateVlan = virtualGuest['networkVlans'][0]['vlanNumber']
         else:
             privateVlan = ""
             publicVlan = ""
@@ -207,11 +208,12 @@ class event_logs():
             templateImage = "Stock Image"
 
         if "networkVlans" in virtualGuest:
-            publicVlan = virtualGuest['networkVlans'][0]['vlanNumber']
             if len(virtualGuest['networkVlans']) > 1:
+                publicVlan = virtualGuest['networkVlans'][0]['vlanNumber']
                 privateVlan = virtualGuest['networkVlans'][1]['vlanNumber']
             else:
-                privateVlan = ""
+                publicVlan = ""
+                privateVlan = virtualGuest['networkVlans'][0]['vlanNumber']
         else:
             privateVlan = ""
             publicVlan = ""
