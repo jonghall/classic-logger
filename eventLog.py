@@ -287,8 +287,14 @@ def printLogs(event):
     meta = {}
     if 'resource' in event:
         meta.update(event['resource'])
+
+
     if event["metaData"] != "":
-        meta.update(json.loads(event["metaData"]))
+        metaData = {"eventChange": event['metaData']}
+        try:
+            meta.update(metaData)
+        except:
+            logging.error("Error parsing metaData: %s" % event['metaData'])
 
     if "label" in event:
         label = event["label"]
